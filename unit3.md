@@ -486,7 +486,7 @@ Download the dataset from the link below 👇:
 
 - [Mall Customer Segmentation Dataset](https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python)
 - [Global Happiness Dataset](https://www.kaggle.com/unsdsn/world-happiness)
-- [COVID-19 Data](https://www.kaggle.com/datasets/robertopl/coronavirus-covid19-cases)
+- [COVID-19 Data](https://www.kaggle.com/datasets/brendaso/2019-coronavirus-dataset-01212020-01262020)
 - [Supermarket Sales Dataset](https://www.kaggle.com/aungpyaeap/supermarket-sales)
 - [Movie Ratings Dataset](https://www.kaggle.com/grouplens/movielens-20m-dataset) 
 #### Instructions
