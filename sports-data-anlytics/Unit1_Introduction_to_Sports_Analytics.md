@@ -122,7 +122,8 @@ For hands-on practice, we will use a real-world dataset from StatsBomb Open Data
 ```python
 import json
 import requests
-
+import pandas as pd
+import matplotlib.pyplot as plt
 # Load the real-world dataset
 url = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/matches/43/3.json"
 response = requests.get(url)
@@ -139,12 +140,31 @@ matches_per_competition = matches['competition.competition_name'].value_counts()
 print(matches_per_competition)
 
 # Visualization
-matches_per_competition.plot(kind='bar', figsize=(10, 6), color='purple')
-plt.title('Matches per Competition')
-plt.xlabel('Competition')
+matches_per_stadium = matches['stadium.name'].value_counts()
+matches_per_stadium.plot(kind='bar', figsize=(10, 6), color='green')
+plt.title('Matches per Stadium')
+plt.xlabel('Stadium')
 plt.ylabel('Number of Matches')
 plt.xticks(rotation=45)
 plt.show()
+
+matches_per_referee = matches['referee.name'].value_counts()
+matches_per_referee.plot(kind='bar', figsize=(10, 6), color='blue')
+plt.title('Matches per Referee')
+plt.xlabel('Referee')
+plt.ylabel('Number of Matches')
+plt.xticks(rotation=45)
+plt.show()
+
+
+matches_per_week = matches['match_week'].value_counts().sort_index()
+matches_per_week.plot(kind='bar', figsize=(10, 6), color='orange')
+plt.title('Matches per Match Week')
+plt.xlabel('Match Week')
+plt.ylabel('Number of Matches')
+plt.xticks(rotation=45)
+plt.show()
+
 ```
 
 ---
