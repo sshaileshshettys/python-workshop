@@ -1,7 +1,7 @@
 # Unit 1: Introduction to Sports Analytics
 
 ## Overview
-This unit provides an introduction to sports analytics, covering its meaning, definition, and importance. It explores the data revolution in sports and recent trends across various sports such as athletics, soccer, and cricket.
+This unit provides an introduction to sports analytics, covering its meaning, definition, and importance. It explores the data revolution in sports and recent trends across various sports such as athletics, soccer, and cricket. Additionally, it includes real-world datasets to provide hands-on experience with sports data analysis.
 
 ---
 
@@ -13,6 +13,7 @@ By the end of this unit, students will be able to:
 - Analyze the recent trends in sports analytics.
 - Implement programming techniques for sports data analysis.
 - Understand and visualize key performance indicators (KPIs) in sports.
+- Work with real-world datasets to derive actionable insights.
 
 ---
 
@@ -44,6 +45,7 @@ Sports analytics refers to the use of data and statistical models to:
 ## Advanced Programming Examples with Dataset
 
 ### Dataset: Player Performance Data
+A small dataset to simulate player performance analysis:
 ```python
 import pandas as pd
 
@@ -113,9 +115,50 @@ print("Predictions:", predictions)
 
 ---
 
+## Real-World Dataset
+For hands-on practice, we will use a real-world dataset from StatsBomb Open Data. Specifically, we will analyze match data in JSON format.
+
+### Example: Loading and Analyzing Real Data
+```python
+import json
+import requests
+
+# Load the real-world dataset
+url = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/matches/43/3.json"
+response = requests.get(url)
+data = response.json()
+
+# Convert JSON data to a DataFrame
+matches = pd.json_normalize(data)
+
+# Display the first few rows of the dataset
+print(matches.head())
+
+# Example Analysis: Count matches per competition
+matches_per_competition = matches['competition.competition_name'].value_counts()
+print(matches_per_competition)
+
+# Visualization
+matches_per_competition.plot(kind='bar', figsize=(10, 6), color='purple')
+plt.title('Matches per Competition')
+plt.xlabel('Competition')
+plt.ylabel('Number of Matches')
+plt.xticks(rotation=45)
+plt.show()
+```
+
+---
+
 ## Competencies
 - Define and discuss the core principles of sports analytics.
 - Apply basic and advanced programming techniques to sports contexts.
 - Analyze trends and patterns using data visualization and statistical tools.
 - Perform predictive modeling for sports outcomes.
 - Extract actionable insights from real-world datasets.
+
+---
+
+## References
+- Minton, R. B. (2016). *Sports Math: An Introductory Course in the Mathematics of Sports Science and Sports Analytics.* Chapman and Hall/CRC.
+- Kwartler, T. (2022). *Sports Analytics in Practice with R.* John Wiley & Sons.
+- [StatsBomb Open Data](https://github.com/statsbomb/open-data).
