@@ -1,184 +1,115 @@
 # Unit 1: Introduction to Sports Analytics
 
 ## Overview
-This unit provides an introduction to sports analytics, covering its meaning, definition, and importance. It explores the data revolution in sports and recent trends across various sports such as athletics, soccer, and cricket. Additionally, it includes real-world datasets to provide hands-on experience with sports data analysis.
+
+In this unit, we will introduce you to the field of sports analytics, its importance, and how data is transforming the way sports teams, athletes, and fans interact with sports. Sports analytics involves gathering data from various sources, analyzing it to derive insights, and applying these insights to improve performance, enhance fan experience, and make more informed decisions.
+
+We will explore different types of data, the ways it can be collected, and the methods for analyzing and interpreting it. You will also learn the basic tools required to perform sports analytics, including Python and various libraries for data manipulation and visualization.
+
+### Topics Covered
+1. **What is Sports Analytics?**
+2. **Types of Data in Sports**
+3. **Importance of Sports Analytics**
+4. **Basic Python for Data Analysis**
+5. **Getting Started with Sports Datasets**
 
 ---
 
-## Learning Objectives
-By the end of this unit, students will be able to:
+## 1. What is Sports Analytics?
 
-- Define sports analytics.
-- Explain the significance of sports analytics.
-- Analyze the recent trends in sports analytics.
-- Implement programming techniques for sports data analysis.
-- Understand and visualize key performance indicators (KPIs) in sports.
-- Work with real-world datasets to derive actionable insights.
+Sports analytics is the process of collecting, analyzing, and interpreting data from sports events. This data can be related to player performance, team strategies, game outcomes, or fan behavior. The goal is to gain insights that can help improve decisions related to training, game preparation, fan engagement, and more.
 
----
-
-## Content
-
-### 1. What is Sports Analytics?
-Sports analytics refers to the use of data and statistical models to:
-
-- Evaluate player performance.
-- Predict game outcomes.
-- Develop strategies for improving team performance.
-- Optimize training regimens and reduce injury risks.
-
-### 2. Importance of Sports Analytics
-- **Player Evaluation**: Identifying strengths and weaknesses.
-- **Team Strategy**: Making informed decisions during matches.
-- **Fan Engagement**: Enhancing viewer experience with insights.
-- **Injury Prevention**: Using data to monitor player health and minimize injuries.
-
-### 3. Recent Trends in Sports Analytics
-- The rise of tracking technologies (e.g., GPS, RFID).
-- Real-time data analysis during games.
-- Advanced metrics for player performance (e.g., Expected Goals (xG) in soccer).
-- Use of AI and machine learning to improve predictions.
-- Wearable tech to collect player-specific data.
+### Key Areas in Sports Analytics:
+- **Player Evaluation**: Analyzing player statistics to assess performance.
+- **Team Strength Measurement**: Understanding team dynamics and performance through data.
+- **Outcome Prediction**: Using historical data to predict future game outcomes.
+- **Fan Engagement**: Enhancing the experience of fans using data-driven strategies.
 
 ---
 
-## Advanced Programming Examples with Dataset
+## 2. Types of Data in Sports
 
-### Dataset: Player Performance Data
-A small dataset to simulate player performance analysis:
-```python
-import pandas as pd
+Sports data can be classified into several categories:
+- **Performance Data**: Information about player stats (e.g., goals, assists, minutes played).
+- **Game Data**: Results, scores, and other details about matches or games.
+- **Biometric Data**: Physical and health data, such as heart rate, steps, etc.
+- **Fan Data**: Demographic and engagement data about fans.
 
-# Creating a sample dataset
-player_data = pd.DataFrame({
-    'Player': ['Alice', 'Bob', 'Charlie', 'Diana', 'Eve'],
-    'Games Played': [10, 12, 11, 13, 10],
-    'Total Points': [250, 300, 280, 310, 260],
-    'Assists': [50, 60, 55, 65, 52],
-    'Rebounds': [80, 90, 85, 95, 88]
-})
+### Example of Performance Data for a Soccer Player
 
-print(player_data)
-```
-
-### Example 1: Calculating Advanced Metrics
-```python
-# Calculate Points Per Game
-player_data['Points Per Game'] = player_data['Total Points'] / player_data['Games Played']
-
-# Calculate Efficiency Rating
-player_data['Efficiency'] = (player_data['Total Points'] + player_data['Assists'] + player_data['Rebounds']) / player_data['Games Played']
-
-print(player_data[['Player', 'Points Per Game', 'Efficiency']])
-```
-
-### Example 2: Visualizing Player Performance
-```python
-import matplotlib.pyplot as plt
-
-# Bar chart for Points Per Game
-plt.figure(figsize=(10, 6))
-plt.bar(player_data['Player'], player_data['Points Per Game'], color='skyblue')
-plt.title('Points Per Game by Player')
-plt.xlabel('Player')
-plt.ylabel('Points Per Game')
-plt.show()
-```
-
-### Example 3: Correlation Analysis
-```python
-# Correlation between metrics
-correlation_matrix = player_data[['Total Points', 'Assists', 'Rebounds']].corr()
-print("Correlation Matrix:\n", correlation_matrix)
-```
-
-### Example 4: Predicting Performance with Scikit-Learn
-```python
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression
-
-# Features and target variable
-X = player_data[['Games Played', 'Assists', 'Rebounds']]
-y = player_data['Total Points']
-
-# Split data into training and testing sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-# Train a linear regression model
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-# Predict on test data
-predictions = model.predict(X_test)
-print("Predictions:", predictions)
-```
+| Player Name | Goals | Assists | Minutes Played |
+|-------------|-------|---------|----------------|
+| Lionel Messi| 30    | 10      | 2700           |
+| Cristiano Ronaldo | 25 | 5    | 2500           |
 
 ---
 
-## Real-World Dataset
-For hands-on practice, we will use a real-world dataset from StatsBomb Open Data. Specifically, we will analyze match data in JSON format.
+## 3. Importance of Sports Analytics
 
-### Example: Loading and Analyzing Real Data
-```python
-import json
-import requests
-import pandas as pd
-import matplotlib.pyplot as plt
-# Load the real-world dataset
-url = "https://raw.githubusercontent.com/statsbomb/open-data/master/data/matches/43/3.json"
-response = requests.get(url)
-data = response.json()
-
-# Convert JSON data to a DataFrame
-matches = pd.json_normalize(data)
-
-# Display the first few rows of the dataset
-print(matches.head())
-
-# Example Analysis: Count matches per competition
-matches_per_competition = matches['competition.competition_name'].value_counts()
-print(matches_per_competition)
-
-# Visualization
-matches_per_stadium = matches['stadium.name'].value_counts()
-matches_per_stadium.plot(kind='bar', figsize=(10, 6), color='green')
-plt.title('Matches per Stadium')
-plt.xlabel('Stadium')
-plt.ylabel('Number of Matches')
-plt.xticks(rotation=45)
-plt.show()
-
-matches_per_referee = matches['referee.name'].value_counts()
-matches_per_referee.plot(kind='bar', figsize=(10, 6), color='blue')
-plt.title('Matches per Referee')
-plt.xlabel('Referee')
-plt.ylabel('Number of Matches')
-plt.xticks(rotation=45)
-plt.show()
-
-
-matches_per_week = matches['match_week'].value_counts().sort_index()
-matches_per_week.plot(kind='bar', figsize=(10, 6), color='orange')
-plt.title('Matches per Match Week')
-plt.xlabel('Match Week')
-plt.ylabel('Number of Matches')
-plt.xticks(rotation=45)
-plt.show()
-
-```
+The role of data in sports is growing, and analytics can provide teams with a competitive edge. It helps in:
+- **Improving player performance**: Identifying strengths and weaknesses.
+- **Strategic decision-making**: Enhancing team performance through data-driven tactics.
+- **Optimizing fan engagement**: Understanding fan preferences and behavior to enhance their experience.
+- **Predicting game outcomes**: Analyzing historical data to make predictions on future games.
 
 ---
 
-## Competencies
-- Define and discuss the core principles of sports analytics.
-- Apply basic and advanced programming techniques to sports contexts.
-- Analyze trends and patterns using data visualization and statistical tools.
-- Perform predictive modeling for sports outcomes.
-- Extract actionable insights from real-world datasets.
+
+
+Sure! Here's an expanded and more comprehensive section with additional Python code examples for data analysis, making it more practical and varied for learning purposes.
 
 ---
 
-## References
-- Minton, R. B. (2016). *Sports Math: An Introductory Course in the Mathematics of Sports Science and Sports Analytics.* Chapman and Hall/CRC.
-- Kwartler, T. (2022). *Sports Analytics in Practice with R.* John Wiley & Sons.
-- [StatsBomb Open Data](https://github.com/statsbomb/open-data).
+## 4. Basic Python for Data Analysis
+
+Python has become a popular tool in sports analytics due to its vast ecosystem of libraries and ease of use. In this section, we'll cover some basic concepts and show how Python can be used for analyzing sports data. We will focus on libraries like **Pandas**, **NumPy**, **Matplotlib**, and **Seaborn**.
+[Notebook click here](./notebooks/unit1.ipynb).
+---
+
+## Assignment
+
+1. **Data Cleaning**:
+   - Load a new dataset and check for missing data.
+   - Handle missing data by filling or dropping the rows.
+
+2. **Exploratory Data Analysis**:
+   - Calculate the mean, median, and standard deviation of goals and assists.
+   - Create a correlation matrix between all numeric columns in the dataset.
+   - Plot a pairplot to visualize relationships between numeric variables like goals, assists, and minutes played.
+
+3. **Data Visualization**:
+   - Create a line plot showing the total goals scored over time (if you have data for multiple seasons).
+   - Generate a heatmap to visualize correlations between player stats like goals, assists, and minutes played.
+
+4. **Grouping and Aggregation**:
+   - Group the data by `Position` and calculate the total goals and average minutes played for each position.
+   - Identify the player with the highest goals per match and plot a bar chart for the top 5 players.
+
+5. **Advanced (Optional)**:
+   - Build a simple linear regression model to predict goals based on minutes played using **scikit-learn**.
+   - Evaluate the model's performance with mean squared error (MSE) and R² score.
+
+
+
+## 5. Getting Started with Sports Datasets
+
+### Sample Dataset: Soccer Player Stats
+
+In this section, we will use a sample dataset containing player statistics to perform basic analysis. The dataset might include columns like "Player Name," "Goals," "Assists," and "Minutes Played." You can download the dataset from [Kaggle - Soccer Player Stats](https://www.kaggle.com).
+
+### Dataset Example:
+
+| Player Name     | Goals | Assists | Minutes Played |
+|-----------------|-------|---------|----------------|
+| Lionel Messi    | 30    | 10      | 2700           |
+| Cristiano Ronaldo| 25   | 5       | 2500           |
+| Neymar          | 20    | 7       | 2300           |
+
+---
+
+
+## Conclusion
+
+In this unit, we covered the fundamentals of sports analytics, including the types of data used in the field, the importance of data-driven decisions, and the tools you will use to perform sports analysis. You should now have a basic understanding of how data is used in sports and how Python helps in analyzing and visualizing this data.
+
+Happy coding and see you in the next unit!
