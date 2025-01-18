@@ -1,44 +1,112 @@
-# Sports Analytics Course
+# Sports Analytics: Comprehensive Guide
 
-## Overview
-This course explores the growing field of sports analytics, emphasizing data-driven approaches to player evaluation, team performance, and fan engagement. Students will gain hands-on experience in applying statistical modeling, machine learning, and data visualization techniques to real-world sports scenarios.
+## Course Synopsis
 
-### Course Outcomes (COs)
-- **CO 1:** Explain the variety of quantitative concepts in sports analytics.
-- **CO 2:** Discuss data management, data visualization, and estimating different analytical models.
-- **CO 3:** Evaluate sufficient knowledge and skills in statistical modeling in sports analytics.
-- **CO 4:** Demonstrate creativity in fan engagement.
-- **CO 5:** Analyze the role of machine learning and AI in predicting sports outcomes.
-- **CO 6:** Examine the significance of data visualization in sports.
+The explosion of data in sports has created unprecedented opportunities to analyze and extract insights. This course introduces students to the fundamentals of sports analytics, covering topics like player evaluation, team strength measurement, outcome prediction, and fan engagement. The curriculum emphasizes hands-on learning with real-world datasets, statistical modeling, and cutting-edge techniques, including machine learning and data visualization.
 
 ---
 
-## Table of Contents
+## Learning Outcomes (COs)
 
-1. [Introduction to Sports Analytics](./Unit1_Introduction_to_Sports_Analytics.md)
-2. [Big Data in Sports](./Unit2_Big_Data_in_Sports.md)
-3. [Performance Analysis](./Unit3_Performance_Analysis.md)
-4. [Fan Engagement and Analytics](./Unit4_Fan_Engagement_and_Analytics.md)
-5. [Machine Learning and AI in Sports](./Unit5_Machine_Learning_and_AI_in_Sports.md)
-6. [Sports Data Visualization](./Unit6_Sports_Data_Visualization.md)
+By the end of this course, students will:
 
----
-
-## Recommended Reading
-
-1. Minton, R. B. (2016). *Sports Math: An Introductory Course in the Mathematics of Sports Science and Sports Analytics.* Chapman and Hall/CRC.
-2. Kwartler, T. (2022). *Sports Analytics in Practice with R.* John Wiley & Sons.
-3. Link, D. (2018). *Sports Analytics - How (commercial) sports data create new opportunities for sports science.*
-4. Gopinathan, P. (2022). *Educational Technology in Physical Education and Sports. Sports Educational Technologies.*
+1. **CO 1**: Explain the variety of quantitative concepts in sports analytics.
+2. **CO 2**: Discuss data management, visualization, and analytical models.
+3. **CO 3**: Evaluate statistical modeling techniques in sports analytics.
+4. **CO 4**: Demonstrate creativity in fan engagement strategies.
+5. **CO 5**: Analyze the role of machine learning and artificial intelligence in predicting sports outcomes.
+6. **CO 6**: Examine the significance of data visualization in sports.
 
 ---
 
-## Hands-On Activities
+## Course Structure
 
-The course includes live data analysis, project-based learning (both group and individual), and practical case studies to help students apply theoretical knowledge to real-world scenarios.
+| Unit No. | Title                                | Description                                                                              | Hours | Link                             |
+| -------- | ------------------------------------ | ---------------------------------------------------------------------------------------- | ----- | -------------------------------- |
+| 1        | **Introduction to Sports Analytics** | Overview of sports analytics, its importance, and recent trends across various sports.   | 8     | [Unit 1](unit1_intro.md)         |
+| 2        | **Big Data in Sports**               | Big data concepts, data collection techniques, and game theory.                          | 8     | [Unit 2](unit2_bigdata.md)       |
+| 3        | **Performance Analysis**             | Predictive modeling, factors influencing performance, and sports rating systems.         | 8     | [Unit 3](unit3_performance.md)   |
+| 4        | **Fan Engagement and Analytics**     | Smart contracts, blockchain, betting, gaming, and data-driven TV analysis.               | 8     | [Unit 4](unit4_fan.md)           |
+| 5        | **Machine Learning & AI in Sports**  | Role of machine learning, rating systems, and decision-making tools in sports analytics. | 8     | [Unit 5](unit5_ml.md)            |
+| 6        | **Sport Data Visualization**         | Techniques for data visualization, attitudes in analytics, and future trends.            | 8     | [Unit 6](unit6_visualization.md) |
+
+**Total Hours**: 48
 
 ---
 
-## Module Details
+## Prerequisites
 
-Each module focuses on a specific aspect of sports analytics, detailing competencies, hours, and references. Refer to the individual markdown files linked in the Table of Contents for more details.
+Students are expected to have basic knowledge of:
+
+- Statistics and probability.
+- Python programming.
+- Microsoft Excel for data manipulation.
+
+---
+
+## Learning Strategies
+
+| Strategy                | Contact Hours | Student Learning Time (Hrs) |
+| ----------------------- | ------------- | --------------------------- |
+| Lectures                | 40            | 90                          |
+| Seminars                | 2             | 8                           |
+| Small Group Discussions | 1             | 8                           |
+| Self-directed Learning  | 2             | 14                          |
+| Problem-based Learning  | 2             | 4                           |
+| Case-based Learning     | 2             | 10                          |
+| Practicals              | 2             | 6                           |
+| Revision                | 2             | 10                          |
+| Assessments             | 5             | 10                          |
+
+**Total**: 58 Contact Hours, 160 Total Hours
+
+---
+
+## Assessment Methods
+
+| Nature of Assessment      | CO 1 | CO 2 | CO 3 | CO 4 | CO 5 | CO 6 |
+| ------------------------- | ---- | ---- | ---- | ---- | ---- | ---- |
+| Midterm Examination       | X    | X    |      |      |      |      |
+| Class Tests/Quiz          | X    |      |      |      |      |      |
+| Assignments/Presentations |      | X    | X    |      | X    |      |
+| End Semester Examination  | X    | X    |      |      | X    | X    |
+
+---
+
+## Reference Materials
+
+1. **Minton, R. B. (2016)**: *Sports Math: An Introductory Course in the Mathematics of Sports Science and Sports Analytics.* Chapman and Hall/CRC.
+2. **Kwartler, T. (2022)**: *Sports Analytics in Practice with R.* John Wiley & Sons.
+3. **Link, D. (2018)**: *Sports Analytics - How (Commercial) Sports Data Create New Opportunities for Sports Science.*
+4. **Jayal, A., McRobert, A., Oatley, G., & O’Donoghue, P. (2018)**: *Sports Analytics: Analysis, Visualization, and Decision Making in Sports Performance.* Routledge.
+5. **Gopinathan, P. (2022)**: *Educational Technology in Physical Education and Sports.* Sports Educational Technologies.
+
+---
+
+## Tools and Technologies
+
+- **Programming Language**: Python
+- **Libraries**: Pandas, NumPy, Matplotlib, Seaborn, Scikit-learn
+- **Data Sources**: Freely available datasets (e.g., Kaggle, UCI Repository)
+- **Visualization Tools**: Jupyter Notebooks, Tableau (optional)
+
+---
+
+## Datasets
+
+Datasets used in this course will be freely downloadable. Examples include:
+
+- Player and team statistics from sports like cricket, soccer, and basketball.
+- Historical match results and scores.
+- Performance metrics for players and teams.
+
+---
+
+## License
+
+This repository is licensed under the MIT License. See `LICENSE` for details.
+
+---
+
+Happy Learning! 🚀
+
