@@ -63,7 +63,10 @@ Sure! Here's an expanded and more comprehensive section with additional Python c
 ## 4. Basic Python for Data Analysis
 
 Python has become a popular tool in sports analytics due to its vast ecosystem of libraries and ease of use. In this section, we'll cover some basic concepts and show how Python can be used for analyzing sports data. We will focus on libraries like **Pandas**, **NumPy**, **Matplotlib**, and **Seaborn**.
-[Notebook click here](./notebooks/unit1.ipynb).
+
+[Download Dataset here](https://www.kaggle.com/datasets/orkunaktas/all-football-players-stats-in-top-5-leagues-2324/data)
+
+[Click here to open Notebook](./notebooks/unit1.ipynb).
 ---
 
 ## Assignment
